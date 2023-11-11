@@ -1,0 +1,75 @@
+import time
+
+def introduction():
+    print("Welcome to the Mysterious Forest Adventure!")
+    time.sleep(2)
+    print("You find yourself standing at the edge of a dense forest.")
+    time.sleep(2)
+    print("A mysterious path leads deeper into the woods.")
+    time.sleep(2)
+
+def make_choice():
+    print("\nWhat will you do?")
+    time.sleep(1)
+    print("1. Follow the path into the forest.")
+    time.sleep(1)
+    print("2. Turn back and leave.")
+    time.sleep(1)
+    choice = input("Enter your choice (1 or 2): ")
+    return choice
+
+def forest_path():
+    print("\nYou decide to follow the path into the forest.")
+    time.sleep(2)
+    print("The trees loom overhead as you venture further.")
+    time.sleep(2)
+    print("Suddenly, you encounter a fork in the path.")
+    time.sleep(2)
+    print("A signpost points left to 'Enchanted Lake' and right to 'Forbidden Cave'.")
+
+def enchanted_lake():
+    print("\nYou choose to go left towards the Enchanted Lake.")
+    time.sleep(2)
+    print("As you approach, you see shimmering lights dancing on the water.")
+    time.sleep(2)
+    print("A magical creature emerges and offers you a wish.")
+    time.sleep(2)
+    wish = input("What do you wish for? ")
+    print(f"\nThe creature grants your wish: '{wish}'")
+    time.sleep(2)
+    print("You feel a surge of magic as your wish comes true.")
+
+def forbidden_cave():
+    print("\nYou choose to go right towards the Forbidden Cave.")
+    time.sleep(2)
+    print("The entrance is dark and ominous, but curiosity pulls you in.")
+    time.sleep(2)
+    print("Inside, you discover a hidden treasure chest.")
+    time.sleep(2)
+    print("You cautiously open it and find a valuable artifact.")
+    time.sleep(2)
+    print("Congratulations! You've uncovered a priceless treasure.")
+
+def main():
+    introduction()
+    choice = make_choice()
+
+    if choice == '1':
+        forest_path()
+        path_choice = make_choice()
+
+        if path_choice == '1':
+            enchanted_lake()
+        elif path_choice == '2':
+            forbidden_cave()
+        else:
+            print("Invalid choice. The adventure ends here.")
+
+    elif choice == '2':
+        print("\nYou decide to leave the forest. The adventure ends here.")
+
+    else:
+        print("Invalid choice. The adventure ends here.")
+
+if __name__ == "__main__":
+    main()
